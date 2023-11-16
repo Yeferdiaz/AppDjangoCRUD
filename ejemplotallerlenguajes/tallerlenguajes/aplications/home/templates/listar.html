@@ -1,0 +1,34 @@
+{% extends 'homemaster.html' %}
+{% block body %}
+<h1> Lista de pruebas</h1>
+<div class="container-fluid">
+    <table class="table">
+        <tr>
+            <th>Titulo</th>
+            <th>Subtitulo</th>
+            <th>Cantidad</th>
+            <th>Edad</th>
+            <th>tipo</th>
+        </tr>
+
+
+        {% for prueba in object_list %}
+        <tr>
+            <td>{{ prueba.titulo }}</td>
+            <td>{{ prueba.subtitulo }}</td>
+            <td>{{ prueba.cantidad }}</td>
+            <td>{{ prueba.edad }}</td>
+            <td>{{ prueba.tipo }}</td>
+            <td><a class="btn btn-primary" href="/actualizar/{{ prueba.pk }}">Editar</a>
+                <a class="btn btn-danger" href="/eliminar/{{ prueba.id }}">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <li>No articles yet.</li>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

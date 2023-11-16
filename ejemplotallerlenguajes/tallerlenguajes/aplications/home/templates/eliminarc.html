@@ -1,0 +1,8 @@
+{% extends 'homemaster.html' %}
+{% block body %}
+<form method="POST">
+    {%csrf_token%}
+    <h1>desea eliminar el registro? {{object}}</h1>
+    <button class="btn btn-danger">Eliminar</button>
+</form>
+{% endblock %}
